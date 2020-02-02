@@ -1,7 +1,7 @@
 # HTML
 
 ## Overview
-<b>HTML</b> (Hyper-Text Markup Language) describes the <i>layout/structure</i> of
+<b>HTML</b> (HyperText Markup Language) describes the <i>layout/structure</i> of
 a website.
 
 ## Resources
