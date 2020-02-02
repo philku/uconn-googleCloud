@@ -8,40 +8,23 @@ primarily to blogs, personal, and company sites - but can be expanded
 with <b>plugins</b> to add a wide variety of features. <b>Themes</b>
 also help easily change the look and feel of the site.
 
-## Lab
-### Deploying WordPress
-You will be deploying WordPress on the App Engine through the Google
-Cloud Shell. The instructions can be found here:
-[CodeLab: Running WordPress on App Engine Flexible Environment](https://codelabs.developers.google.com/codelabs/cloud-wordpress-on-flex/index.html?index=..%2F..index#3)
 
-### Creating Pages
-To create pages on your WordPress website, simply log into the admin
-portal, and click New > Page. You can edit the content of the page
-her with either the WYSIWYG (What You See Is What You Get) editor, or
-by creating HTML. The "Publish" button will publish the page to your
-website.
-
-
-## Resources
-
-
-<p align="center">
-
-</p>
-
-
-## Lecture
+## Lecture and Lab
 Chapter 2: WordPress
 
+You will be deploying WordPress on the App Engine through the Google
+Cloud Shell. Your instuctor may elect to have you follow the instructions
+in this document or the following Code Lab: [CodeLab: Running WordPress on App Engine Flexible Environment](https://codelabs.developers.google.com/codelabs/cloud-wordpress-on-flex/index.html?index=..%2F..index#3)
 
 ### 2.1: What is WordPress?
-Laying out the pieces of a WordPress deployment
-Turning on a SQL database to store your data
-Turning on a VM to run WordPress
-Turning everything off
 
-Deploying WordPress yourself using
-Google Compute Engine and Google Cloud SQL to host your infrastructure
+In this lesson we will cover:
+* Laying out the pieces of a WordPress deployment
+* Turning on a SQL database to store your data
+* Turning on a VM to run WordPress
+* Deploying WordPress
+* Turning everything off
+
 
 
 Simple WordPress Setup:
@@ -65,6 +48,7 @@ from Google Cloud Storage
 2. requests for images and other static content will be handled directly by Google Cloud Storage
 distributing your content around the world and caching the data close to your readers. Static content will be delivered quickly
 
+<hr>
 ### 2.2 Digging into the database
 The most popular open source database is MySQL. In the early days
 of cloud computing, the standard way to turn on a database like MySQL
@@ -82,7 +66,7 @@ and Google has Cloud SQL service.
 
 For a WordPress deployment, which is typical, Cloud SQL is a great fit.
 
-
+<hr>
 ### 2.2.1. Turning on a Cloud SQL instance
 
 1. The first step to turning on our database is to go to
@@ -129,6 +113,7 @@ the name has to be unique inside your project.
     <img src="https://1.bp.blogspot.com/-bg20U8jDoEY/XjY-1h21FgI/AAAAAAAAL5Q/-KPMxTzmTaYYMKzg-Uz09o9HCu3ZnhDZgCLcBGAsYHQ/s640/w3.JPG">
 </p>
 
+<hr>
 ### 2.2.2. Securing your Cloud SQL instance
 
 9. Add a new network - Open the Authorization tab,
@@ -139,6 +124,7 @@ click the Add network button, add “the world” in CIDR notation
 </p>
 Note: You should never leave this setting for your production environments.
 
+<hr>
 ### 2.2.3. Connecting to your Cloud SQL instance
 
 10. From Instance Details on overview tab click: Connect using Cloud Shell
@@ -176,7 +162,7 @@ MySQL [(none)]>
 ```
 
 
-
+<hr>
 ### 2.2.4. Configuring your Cloud SQL instance for WordPress
 
 Objectives:
@@ -237,7 +223,7 @@ Query OK, 0 rows affected (0.04 sec)
 ```
 
 
-
+<hr>
 ### 2.3. Deploying the WordPress VM
 
 Here we sill use use compute engine to create a Virtual Machine
@@ -272,7 +258,7 @@ Here we sill use use compute engine to create a Virtual Machine
     <img src="https://1.bp.blogspot.com/-eUON0tu3vpc/XjZIHzDgTyI/AAAAAAAAL6A/6H87MUh7sh4BccW7DJBMSo1mKdaIC8dhgCLcBGAsYHQ/s640/w7.JPG">
 </p>
 
-
+<hr>
 ### 2.4. Configuring WordPress
 
 18. Once your VM has been created, click into the instance and connect via SSH
@@ -484,6 +470,9 @@ Input:
 sudo rcp -r * /var/www/html
 ```
 
+Note for troubleshooting: Now that the files are in a different location you will be required
+to edit files in either the new location, or the old location and copy
+them over again in order to see the results on the site.
 
 <hr>
 26. remove the Apache default page, index.html. The easiest way to do this is using rmand then rcp
@@ -501,59 +490,73 @@ sudo rm /var/www/html/index.html
 
 Navigate to the web server in your browser http://35.193.13.130
 
-following the prompts should take about 5 minutes, and you’ll have a working WordPress installation!
-
-
+<hr>
+28. Configure the Site
 
 Configure WP with email account and password
 <p align="center">
     <img src="https://1.bp.blogspot.com/-JjqxYtAH2hM/XXldSh5o1SI/AAAAAAAALSU/w8zNAUE_Zk8MmbMz9HjSJO5ADV33K-cKACLcBGAsYHQ/s640/wp.PNG">
 </p>
 
-add new pages
+<hr>
+29. Add pages
+
+To add pages, select <b>New > Page</b> from the top of your screed or,
+from the left-hand menu, select <b>Pages > New</b>
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-Zh7PiE9sC_U/XjZU9V7WNtI/AAAAAAAAL6w/cdhfLNGpX4oTjh9gmxOu4rSDswAH1-ZNwCLcBGAsYHQ/s320/w11.JPG">
+</p>
+
+You can edit the content of the page
+her with either the WYSIWYG (What You See Is What You Get) editor, or
+by creating HTML. The "Publish" button will publish the page to your
+website.
+
+Here is a video on how to create pages in WordPress:
+[Video of creating WordPress Pages](https://ithemes.com/tutorials/creating-wordpress-page/)
 
 
-You tube of creating WordPress Pages
-2.5. Reviewing the system
+### 2.5. Reviewing the system
 So what did you do here? You set up quite a few different pieces:
-You turned on a Cloud SQL instance to store all of your data.
-You added a few users and changed the security rules.
-You turned on a Compute Engine virtual machine.
-You installed WordPress on that VM.
- set the security rules on the Cloud SQL instance to accept connections from anywhere (0.0.0.0/0)?
+* You turned on a Cloud SQL instance to store all of your data.
+* You added a few users and changed the security rules.
+* You turned on a Compute Engine virtual machine.
+* You installed WordPress on that VM.
 
-accept requests (your VM), you should fix that.
- If you don’t, the database is vulnerable to attacks from the whole world.
+Remember that you set the security rules on the Cloud SQL instance to
+accept connections from anywhere (0.0.0.0/0), you should fix that by
+changing the network to only the IP of your instances that require access.
+If you don’t, the database is vulnerable to attacks from the whole world.
 
-But if we lock down the database at the network level, even if someone discovers the password, it’s useful only if they are connecting from one of our known machines.
+If we lock down the database at the network level, even if someone
+discovers the password, it’s useful only if they are connecting from
+one of our known machines.
 
-Cloud Console, and navigate to your Cloud SQL instance.
-
-edit the Authorized Network, changing 0.0.0.0/0 to the IP address followed by /32
-
-rename the rule to read us-central1-c/wordpress
-
-
-
-
-
-
-edit configuration
+1. Go to Cloud Console, and navigate to your Cloud SQL instance.
+2. Edit the Authorized Network, changing 0.0.0.0/0 to the IP address of your server followed by /32
+3. Rename the rule to read us-central1-c/wordpress
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-mzcJC7W8Upc/XXlk7eu2W1I/AAAAAAAALSw/dc-_BpzwvH05CBBehmFWJFI5mzmig3iAgCLcBGAsYHQ/s640/co.PNG">
+</p>
 
 
+Note: If you have an ephemeral IP, the IP of the VM instance could
+change. To avoid that, you’ll need to reserve a static IP address
 
 
-VM instance could change. To avoid that, you’ll need to reserve a static IP address
+### 2.6. Turning it off
 
+To turn off the items turned on during this lab, first shut off or
+delete the GCE virtual machine. There are two options: Stop and Delete.
 
-2.6. Turning it off
+#### Stop
+When you stop an instance, it’s still there, but in a paused state from
+which you can pick up exactly where you left off. The disk that stores
+the operating system and all your configuration settings needs to stay
+around. You are billed for your disks whether or not they’re attached
+to a running virtual machine
 
-The first thing to turn off is the GCE virtual machine.
+#### Delete
+If you delete an instance, it’s gone forever
 
-two options, Stop and Delete.
-
-delete an instance, it’s gone forever
-
-When you stop an instance, it’s still there, but in a paused state from which you can pick up exactly where you left off.
-
- disk that stores the operating system and all your configuration settings needs to stay around. You are billed for your disks whether or not they’re attached to a running virtual machine
+Next, shut off or delete the Cloud SQL instance.
