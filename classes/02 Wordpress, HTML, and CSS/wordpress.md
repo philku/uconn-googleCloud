@@ -131,7 +131,7 @@ the name has to be unique inside your project.
 
 ### 2.2.2. Securing your Cloud SQL instance
 
-9. Add a new newtwork - Open the Authorization tab,
+9. Add a new network - Open the Authorization tab,
 click the Add network button, add “the world” in CIDR notation
 (0.0.0.0/0, which means “all IPs possible”), then hit done and save.
 <p align="center">
@@ -240,44 +240,63 @@ Query OK, 0 rows affected (0.04 sec)
 
 ### 2.3. Deploying the WordPress VM
 
-use compute engine to create a Virtual Machine
+Here we sill use use compute engine to create a Virtual Machine
+
+15. Select Compute Engine from the top left navigation menu
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-d0-zLXxGUdA/XjZEStvdMuI/AAAAAAAAL5c/NAMAETLL3WkevgSty5cCpSoScvAEw7f4gCLcBGAsYHQ/s640/w4.JPG">
+</p>
+
+16. Create a new VM for our WordPress site
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-2XWch0SHJI0/XjZFk1ciqxI/AAAAAAAAL5o/GIZhk2KwZGsyDLSsQI5dT4hffJ16HhFwQCLcBGAsYHQ/s640/w5.JPG">
+</p>
+
+17. Name the instance <b>wordpress</b> and leave the rest of the defaults
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-IR1uLF2S6Mw/XjZGtaZ-SzI/AAAAAAAAL50/699NKoyeDYoMcX7Z3uDaTrAhPoN1dIRhgCLcBGAsYHQ/s640/w6.JPG">
+</p>
+
+18. Make sure we allow traffic
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-ACIU6zVk8es/XXXKrrcpAMI/AAAAAAAALRw/lBIVHCffwEIP2NInWT2f5UoLtoWI3ymPQCLcBGAs/s640/a3.JPG">
+</p>
+
+18. Make sure we allow traffic by checking Allow HTTPS and Allow HTTP under Firewall
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-ACIU6zVk8es/XXXKrrcpAMI/AAAAAAAALRw/lBIVHCffwEIP2NInWT2f5UoLtoWI3ymPQCLcBGAs/s640/a3.JPG">
+</p>
+
+18. Click Create. Once your instance is created you will see a green check by the name "wordpress"
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-eUON0tu3vpc/XjZIHzDgTyI/AAAAAAAAL6A/6H87MUh7sh4BccW7DJBMSo1mKdaIC8dhgCLcBGAsYHQ/s640/w7.JPG">
+</p>
 
 
+### 2.4. Configuring WordPress
 
-Create a new VM for our WordPress site
+18. Once your VM has been created, click into the instance and connect via SSH
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-GKk5qucZsmM/XXhG5NE-nvI/AAAAAAAALSI/4ZOqFrw_rDM0ZeqBPPlAQgcbaLYY1zLIgCLcBGAsYHQ/s1600/a4.JPG">
+</p>
 
+On Linux operating systems that use the <b>APT</b> package management
+system, the <b>apt-get</b> command is used to install, remove,
+and perform other operations on installed software packages.
+The apt-get command, and other core APT utilities,
+are available by default in the Debian, Ubuntu, and Linux Mint
+operating systems.
 
+<hr>
+19. Update with apt-get
 
-Name instance wordpress
+Input:
+```
+sudo apt-get update
+```
 
-leave defaults
-
-
-
-Make sure we allow traffic
-
-
-
-
-
-
-click into the instance then connect via ssh
-
-
-
-
-
-check boxes for allowing HTTP and HTTPS traffic are selected because we want our WordPress server to be accessible to anyone through their browsers.
-
-
-2.4. Configuring WordPress
-
-connect to VM via SSH.
-
-On Linux operating systems that use the APT package management system, the apt-get command is used to install, remove, and perform other operations on installed software packages. The apt-get command, and other core APT utilities, are available by default in the Debian, Ubuntu, and Linux Mint operating systems.
-
-
-john_iacovacci1@wordpress:~$ sudo apt-get update
+Output:
+```
 Hit:1 http://security.debian.org stretch/updates InRelease
 Ign:2 http://deb.debian.org/debian stretch InRelease
 Hit:3 http://packages.cloud.google.com/apt cloud-sdk-stretch InRelease
@@ -289,22 +308,33 @@ table InRelease
 Hit:8 http://packages.cloud.google.com/apt google-cloud-packages-archive-k
 eyring-stretch InRelease
 Reading package lists... Done
-john_iacovacci1@wordpress:~$
+```
 
 
-
-sudo apt-get install apache2 mysql-client php7.0-mysql php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-gd
-
-john_iacovacci1@wordpress:~$ sudo apt-get install apache2 mysql-client php7.0-mysql php7.0 libapache2-mod-
-php7.0 php7.0-mcrypt php7.0-gd
+<hr>
+20. Install required packages
 
 Apache is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free.
 
+Input:
+```
+sudo apt-get install apache2 mysql-client php7.0-mysql php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-gd
+```
 
 
 
+<hr>
+21. Get wordpress with wget
+
+GNU Wget (or just Wget, formerly Geturl, also written as its package name, wget) is a computer program that retrieves content from web servers.
+
+Input:
+```
 wget http://wordpress.org/latest.tar.gz
+```
 
+Output:
+```
 john_iacovacci1@wordpress:~$ wget http://wordpress.org/latest.tar.gz
 --2019-09-11 01:00:31--  http://wordpress.org/latest.tar.gz
 Resolving wordpress.org (wordpress.org)... 198.143.164.252
@@ -318,38 +348,69 @@ Length: 11198223 (11M) [application/octet-stream]
 Saving to: ‘latest.tar.gz’
 latest.tar.gz              100%[======================================>]  10.68M  --.-KB/s    in 0.1s
 2019-09-11 01:00:31 (86.5 MB/s) - ‘latest.tar.gz’ saved [11198223/11198223]
+```
 
-GNU Wget (or just Wget, formerly Geturl, also written as its package name, wget) is a computer program that retrieves content from web servers.
 
-john_iacovacci1@wordpress:~$tar xzvf latest.tar.gz
+<hr>
+22. Extract wordpress to the wordpress directory
 
 The Linux ‘tar’ stands for tape archive, is used to create Archive and extract the Archive files.
-john_iacovacci1@wordpress:~$  cd wordpress
+
+Input:
+```
+tar xzvf latest.tar.gz
+```
+
+
+<hr>
+23. Navigate to the wordpress directory
+
+The Linux ‘tar’ stands for tape archive, is used to create Archive and extract the Archive files.
+
+Input:
+```
+cd wordpress
+```
+
+Your terminal input line should now look like this:
+```
 john_iacovacci1@wordpress:~/wordpress$
-john_iacovacci1@wordpress:~/wordpress$ cp wp-config-sample.php wp-config.php
-
-john_iacovacci1@jiacovacci:~$
-~/wordpress$ cp wp-config-sample.php wp-config.php
+```
+The <i>~/wordpress</i> section signifies that you are in the wordpress directory
 
 
+<hr>
+24. Copy the sample configuration
+
+Here you will copy the file <i>wp-config-sample.php</i> and rename the
+copy <i>wp-config.php</i>
+
+Input:
+```
+cp wp-config-sample.php wp-config.php
+```
 
 
 
-set some configuration parameters
+<hr>
+24. Edit the wordpress configuration
 
-where WordPress should store data and how to authenticate
+24.a. Double check the IP of your Cloud SQL instance and jot it down, you will need this in the next step.
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-3QWpfBeFzUI/XjZPjW0A4KI/AAAAAAAAL6c/Y6r1wX-e8rUY-zJ1YxVhZCbhqFy3v5gmQCEwYBhgL/s640/w8.JPG">
+</p>
 
+24.b. Set the configuration parameters
 
+Edit the file with pico/nano using the following command:
+```
 pico wp-config.php
+```
 
-edit the file to point to your Cloud SQL instance.
+This will open a PHP file in your editor that should look somewhat like
+the following:
 
-
-
-
-
-
-
+```PHP
 <?php
 /**
  * The base configuration for WordPress
@@ -380,41 +441,76 @@ define( 'DB_PASSWORD', 'uconnstamford' );
 define( 'DB_HOST', '35.237.31.226' );
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-?>
+```
 
-move all those files out of your home directory and into somewhere that Apache can serve them.
+The IP address for 'DB_HOST' will need to be changed to the IP address of
+your Cloud SQL instance that you checked in 24.a.
+
+You should also ensure that all the following variables are accurate:
+<table>
+  <tr>
+    <th>DB_NAME</th>
+    <td>The name of your database</td>
+  </tr>
+  <tr>
+    <th>DB_User</th>
+    <td>The name of your database user</td>
+  </tr>
+  <tr>
+    <th>DB_PASSWORD</th>
+    <td>The password you assigned to the user</td>
+  </tr>
+  <tr>
+    <th>DB_HOST</th>
+    <td>The IP of your Cloud SQL Instance</td>
+  </tr>
+  <tr>
+    <th>DB_CHARSET</th>
+    <td>utf8</td>
+  </tr>
+</table>
 
 
 
-remove the Apache default page, index.html. The easiest way to do this is using rmand then rcp
- sudo rm /var/www/html/index.html
+// TODO: Double check the following two steps for issues.
 
+<hr>
+25. Move the wordpress files so Apache can serve them
 
-cd ~/wordpress/
+From the wordpress directory, run the following command:
 
+Input:
+```
 sudo rcp -r * /var/www/html
+```
+
+
+<hr>
+26. remove the Apache default page, index.html. The easiest way to do this is using rmand then rcp
+
+Input:
+```
+sudo rm /var/www/html/index.html
+```
 
 
 
 
+<hr>
+27. Check your installation
 
-
-
-
-
-Now navigate to the web server in your browser http://35.193.13.130
+Navigate to the web server in your browser http://35.193.13.130
 
 following the prompts should take about 5 minutes, and you’ll have a working WordPress installation!
 
 
 
 Configure WP with email account and password
+<p align="center">
+    <img src="https://1.bp.blogspot.com/-JjqxYtAH2hM/XXldSh5o1SI/AAAAAAAALSU/w8zNAUE_Zk8MmbMz9HjSJO5ADV33K-cKACLcBGAsYHQ/s640/wp.PNG">
+</p>
 
 add new pages
-
-
-
-
 
 
 You tube of creating WordPress Pages
