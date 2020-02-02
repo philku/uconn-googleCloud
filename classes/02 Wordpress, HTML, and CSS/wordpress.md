@@ -49,6 +49,7 @@ from Google Cloud Storage
 distributing your content around the world and caching the data close to your readers. Static content will be delivered quickly
 
 <hr>
+
 ### 2.2 Digging into the database
 The most popular open source database is MySQL. In the early days
 of cloud computing, the standard way to turn on a database like MySQL
@@ -67,6 +68,7 @@ and Google has Cloud SQL service.
 For a WordPress deployment, which is typical, Cloud SQL is a great fit.
 
 <hr>
+
 ### 2.2.1. Turning on a Cloud SQL instance
 
 1. The first step to turning on our database is to go to
@@ -163,6 +165,7 @@ MySQL [(none)]>
 
 
 <hr>
+
 ### 2.2.4. Configuring your Cloud SQL instance for WordPress
 
 Objectives:
@@ -224,6 +227,7 @@ Query OK, 0 rows affected (0.04 sec)
 
 
 <hr>
+
 ### 2.3. Deploying the WordPress VM
 
 Here we sill use use compute engine to create a Virtual Machine
