@@ -1,6 +1,5 @@
-# HTML
 
-## Overview
+# HTML - Overview
 <b>HTML</b> (HyperText Markup Language) describes the <i>layout/structure</i> of
 a website. It is a text document that you can produce using any text editor.
 
@@ -14,7 +13,8 @@ Browsers, such as Firefox and Chrome, interpret the HTML along with
 any CSS and JavaScript to produce what we experience when we visit
 a website.
 
-## Basic HTML Structure and Tags
+
+# Basic HTML Structure and Tags
 
 HTML documents contain elements surrounded by <b>tags</b> - text that starts
 with a < symbol and ends with a > symbol. An example of a
@@ -25,7 +25,7 @@ These tags are the markup. It is through the use of tags that
 hyperlinks, images, and other media are included in web pages.
 
 
-### Simple tags:
+## Simple tags:
 * `<h1>` first heading largest size
 * `<p>` Start a paragraph
 * `<a>` anchor The `<a>` element, or anchor element, it used to create a
@@ -70,69 +70,63 @@ While not actually an HTML element itself, every HTML document should
 being with a DOCTYPE declaration to be compliant with HTML standard
 
 
-### [Headings](https://s3.amazonaws.com/uconnweb/headings.html)
+## [Headings](https://s3.amazonaws.com/uconnweb/headings.html)
 
 Heading tags H1 to H6 scale down in size
 ```HTML
-<H1> HEADING 1 </H1>
+<H1> HEADING 1 </H1>    Large
 <H2> HEADING 2 </H2>
 <H3> HEADING 3 </H3>
 <H4> HEADING 4 </H4>
 <H5> HEADING 5 </H5>
-<H6> HEADING 6 </H6>
+<H6> HEADING 6 </H6>    Small
 ```
 
-<div margin-left="10%" width="80%">
-<H1> HEADING 1 </H1>
-<H2> HEADING 2 </H2>
-<H3> HEADING 3 </H3>
-<H4> HEADING 4 </H4>
-<H5> HEADING 5 </H5>
-<H6> HEADING 6 </H6>
-</div>
 
 
 
-### some other simple tags
+## some other simple tags
 
-`<pre>` Creates preformatted text `</pre>`
+### `<pre>` Creates preformatted text `</pre>`
 
 <pre> Creates preformatted text </pre>
 
-`<em>`Creates address section, usually processed in italics`</em>`
+### `<em>`Creates address section, usually processed in italics`</em>`
 
 <em>Creates address section, usually processed in italics</em>
 
-`<strong>` Emphasizes a word (usually processed in italics) `</strong>`
+### `<strong>` Emphasizes a word (usually processed in italics) `</strong>`
 
 <strong> Emphasizes a word (usually processed in italics) </strong>
 
-`<p>` Creates a new paragraph`</p>`
+### `<p>` Creates a new paragraph`</p>`
 
 <p> Creates a new paragraph</p>
 
-`<blockquote>` Puts content in a quote - indents text from both sides`</blockquote>`
+### `<blockquote>` Puts content in a quote - indents text from both sides`</blockquote>`
 
 <blockquote> Puts content in a quote - indents text from both sides</blockquote>
 
-`<div>`Used to format block content with CSS `</div>`
+### `<div>`Used to format block content with CSS `</div>`
 
 <div>Used to format block content with CSS </div>
 
-`<hr>` - Inserts a horizontal rule
+### `<hr>` - Inserts a horizontal rule
 
 <hr>
 
-`<br>` - Inserts a line break (carriage return)
+### `<br>` - Inserts a line break (carriage return)
 
 <br>
 
-### Lists
-`<ul></ul>` - Unordered List
-`<ol></ol>` - Ordered List
-`<li></li>` - Encompasses each list item
+## Lists
 
-Unordered List
+-----|-----
+`<ul></ul>`|Unordered List
+`<ol></ol>`|Ordered List
+`<li></li>`|Encompasses each list item
+
+###Unordered List
 ```HTML
 <ul>
     <li>Encompasses each list item </li>
@@ -145,7 +139,7 @@ Unordered List
 </ul>
 
 
-Ordered list (start=xx, where xx is a counting number)
+###Ordered list
 ```HTML
 <ol>
     <li>first</li>
@@ -159,17 +153,14 @@ Ordered list (start=xx, where xx is a counting number)
 
 
 
-### Links
+## Links
 Now lets look at links
 
 We can link to url's anywhere in the internet: `<a href="https://www.awseducate.com/">clickable text goes to url awseducate.com</a>`
 
-
 Or we can link to pages directly in our current directory: `<a href="simple.html">clickable text goes to url</a>`
 
-
 Can create a link for an email address: `<a href="mailto:EMAIL_ADDRESS">john.iacovacci1@gmail.com</a>`
-
 
 Also, can link to different sections of a web page using NAME
 Creates a hyperlink to an email address
@@ -192,33 +183,37 @@ Adds image; it is a separate file located at the URL
 <img src="images/Bagel-Plain-Alt.jpg" alt="Plain Bagel" width="200" height="200">
 ```
 
-
 Next let's embed images into our web pages
 
-### Forms
 
-Forms are used to collect data inputted by a user. An interface for a web application to send data across the web.
+## Forms
 
-<b>FORM</b> defines the form and within this tag,
+Forms are used to collect data inputted by a user. It is an
+interface for a web application to send data across the web.
+A <b>form</b> defines the form and within this tag,
 an action attribute is needed to tell the form where its
 contents will be sent to.
 
-The method attribute tells the form how the data in will be sent
-* get latches the form information onto a web address
-* post sends the form’s information in JSON
+The <b>method</b> attribute tells the form how the data in will be sent
+Method|Description
+------|------
+<b>get</b>|latches the form information onto the url as a query
+<b>post</b>|sends the form’s information in JSON in the message body
 
-EXAMPLE
+The <b>action</b> attribute defines the url to send the form information
+to.
+
+Form Example:
 ```HTML
-<form action="processingscript.php" method="post">
-
-</form>
+<form action="processingscript.php" method="post"></form>
 ```
 
-action is a program or a gateway
-input tag allows for data to get into the form
+This example will send the form information as a post to processingscript.php
 
 
-<input type="_______">|Description|Example
+### Inputs
+
+`<input type="_______">`|Description|Example
 ----------------------|-----------|---------------------
 `text` | is a standard textbox. This can also have a value attribute, setting initial text in the textbox.|<input type="text">
 `password` | The characters typed in by the user will be hidden.|<input type="password">
@@ -230,15 +225,15 @@ input tag allows for data to get into the form
 You can control the text that appears on the submit button with the value attribute, for example `<input type="submit" value="Click Me Now">`.
 <input type="submit" value="Click Me Now">
 
-### Textarea
+
+## Textarea
 textarea is, basically, a large, multi-line textbox. The
 anticipated number of rows and columns can be defined
 with rows and cols attributes:
 `<textarea rows="5" cols="20">A big load of text</textarea>`
 
-<textarea rows="5" cols="20">A big load of text</textarea>
 
-### Select
+## Select
 
 The select tag works with the option tag to make drop-down select boxes.
 ```
@@ -251,7 +246,8 @@ The select tag works with the option tag to make drop-down select boxes.
 
 When the form is submitted, the value of the selected option will be sent
 
-### Names
+
+## Names
 All of the tags mentioned above will look very nice presented on the
 page but if you hook up your form to a form-handling script, they
 will all be ignored. This is because the form fields need names.
@@ -281,22 +277,6 @@ for example `<input type="text" name="talkingsponge">`.
 </form>
 ```
 
-<form action="" method="post">
-    <p>Name:</p>
-    <p><input type="text" name="name" value="Your name"></p>
-    <p>Species:</p>
-    <p><input name="species"></p>
-    <p>Comments: </p>
-    <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
-    <p>Are you:</p>
-    <p><input type="radio" name="areyou" value="male">Male</p>
-    <p><input type="radio" name="areyou" value="female">Female</p>
-    <p><input type="radio" name="areyou" value="other">Other</p>
-    <p><input type="submit"></p>
-</form>
 
-
-
-
-## Resources
+# Resources
 * [W3 Schools](https://www.w3schools.com/html/default.asp)
