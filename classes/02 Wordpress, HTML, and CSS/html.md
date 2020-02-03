@@ -83,8 +83,6 @@ Heading tags H1 to H6 scale down in size
 ```
 
 
-
-
 ## some other simple tags
 
 #### `<pre>` Creates preformatted text `</pre>`
@@ -119,15 +117,16 @@ Heading tags H1 to H6 scale down in size
 
 <br>
 
+
 ## Lists
-Tag|
+Tag|Description
 -----|-----
 `<ul></ul>`|Unordered List
 `<ol></ol>`|Ordered List
 `<li></li>`|Encompasses each list item
 
-###Unordered List
 
+### Unordered List
 ```HTML
 <ul>
     <li>Encompasses each list item </li>
@@ -140,8 +139,7 @@ Tag|
 </ul>
 
 
-###Ordered list
-
+### Ordered list
 ```HTML
 <ol>
     <li>first</li>
@@ -156,16 +154,24 @@ Tag|
 
 
 ## Links
-Now lets look at links
 
-We can link to url's anywhere in the internet: `<a href="https://www.awseducate.com/">clickable text goes to url awseducate.com</a>`
+We can link to url's anywhere in the internet:
+```HTML
+<a href="https://www.awseducate.com/">clickable text goes to url awseducate.com</a>
+```
 
-Or we can link to pages directly in our current directory: `<a href="simple.html">clickable text goes to url</a>`
+Or we can link to pages directly in our current directory:
+```HTML
+<a href="simple.html">clickable text goes to url</a>
+```
 
-Can create a link for an email address: `<a href="mailto:EMAIL_ADDRESS">john.iacovacci1@gmail.com</a>`
+Can create a link for an email address:
+```HTML
+<a href="mailto:EMAIL_ADDRESS">john.iacovacci1@gmail.com</a>
+```
 
-Also, can link to different sections of a web page using NAME
-Creates a hyperlink to an email address
+Also, you can link to different sections of a web page using a link to
+#NAME, replacing NAME with the ID of an element on the page.
 
 ```HTML
 <a name="NAME">
@@ -174,19 +180,15 @@ Creates a target location within a document
 Creates a link to that target location
 ```
 
-Linking images - you can link to any image on the internet that is public
-
-```HTML
-<img src="https://uconnhuskies.com/images/logos/site/site.png"/>
-```
-
+## Images
 Adds image; it is a separate file located at the URL
+
 ```HTML
-<img src="images/Bagel-Plain-Alt.jpg" alt="Plain Bagel" width="200" height="200">
+<img src="https://uconnhuskies.com/images/logos/site/site.png">
 ```
-
-Next let's embed images into our web pages
-
+<div align="center">
+    <img src="https://uconnhuskies.com/images/logos/site/site.png">
+</div>
 
 ## Forms
 
@@ -224,15 +226,19 @@ This example will send the form information as a post to processingscript.php
 `radio` | is similar to a checkbox, but the user can only select one radio button in a group. This can also have a checked attribute.|<input type="radio">
 `submit` | is a button that will submit the form.|<input type="submit">
 
-You can control the text that appears on the submit button with the value attribute, for example `<input type="submit" value="Click Me Now">`.
+You can control the text that appears on the submit button with the value attribute, for example:
+```HTML
 <input type="submit" value="Click Me Now">
+```
 
 
 ## Textarea
 textarea is, basically, a large, multi-line textbox. The
 anticipated number of rows and columns can be defined
 with rows and cols attributes:
-`<textarea rows="5" cols="20">A big load of text</textarea>`
+```HTML
+<textarea rows="5" cols="20">A big load of text</textarea>
+```
 
 
 ## Select
