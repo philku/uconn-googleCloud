@@ -4,6 +4,10 @@
 a website. Whereas the HTML is the meaning or content, the style
 sheet is the presentation of that document.
 
+The "look and feel" of a website or piece of software describes its appearance.
+People may use this term to discuss how a website looks and how it feels to navigate it.
+The term can be used for any interface, but it is often used in describing websites.
+
 ## Where to put CSS
 There are three ways to apply CSS to HTML:
 * Inline
@@ -70,8 +74,11 @@ the HTML like this:
     ...
 ```
 
-CSS has selectors. Selectors are the names given to styles in internal and external style sheets.
-A value is given to the property following a colon. Semi-colons are used to separate the properties.
+## CSS Syntax
+A CSS rule-set consists of a selector and a declaration block.
+Selectors are the names given to styles in internal and external style sheets.
+A value is given to the property following a colon.
+Semi-colons are used to separate the properties.
 
 ```CSS
 body {
@@ -80,24 +87,15 @@ body {
 }
 ```
 
-This will apply the given values for the font-size and color properties
+The above CSS will apply the given values for the font-size and color properties
 to the body selector.
 
-## CSS Syntax
-A CSS rule-set consists of a selector and a declaration block:
-
 ![CSS selector](https://www.w3schools.com/csS/selector.gif)
-
-
-The selector points to the HTML element you want to style.
-
-The declaration block contains one or more declarations separated by semicolons.
-
-Each declaration includes a CSS property name and a value, separated by a colon.
-
-A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.
-
-In the following example all `<p> elements will be center-aligned, with a red text color:
+* The selector points to the HTML element you want to style.
+* The declaration block contains one or more declarations separated by semicolons.
+* Each declaration includes a CSS property name and a value, separated by a colon.
+* A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.
+* In the following example all `<p>` elements will be center-aligned, with a red text color:
 
 ```HTML
 <!DOCTYPE html>
@@ -118,11 +116,16 @@ In the following example all `<p> elements will be center-aligned, with a red te
 ```
 
 
-The id selector uses the id attribute of an HTML element to select a specific element.
+### Select element by ID
 
-The id of an element should be unique within a page, so the id selector is used to select one unique element!
+The id selector uses the id attribute of an HTML element to
+select a specific element.
 
-To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+The id of an element should be unique within a page, so the id
+selector is used to select one unique element.
+
+To select an element with a specific id, write a hash (#) character,
+followed by the id of the element.
 
 The style rule below will be applied to the HTML element with id="para1":
 
@@ -148,6 +151,8 @@ The style rule below will be applied to the HTML element with id="para1":
 </html>
 ```
 
+
+### Select element by Class
 
 The class selector selects elements with a specific class attribute.
 
@@ -175,12 +180,6 @@ In the example below, all HTML elements with class="center" will be red and cent
 </html>
 ```
 
-
-The "look and feel" of a website or piece of software describes its appearance and functionality.
-
-People may use this term to discuss how a website looks and how it feels to navigate it.
-
-The term can be used for any interface, but it is often used in describing websites.
 
 
 ## Resources

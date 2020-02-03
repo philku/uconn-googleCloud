@@ -1,6 +1,6 @@
 
 # HTML - Overview
-<b>HTML</b> (HyperText Markup Language) describes the <i>layout/structure</i> of
+<b>HTML</b> (HyperText Markup Language) describes the <i>structure</i> of
 a website. It is a text document that you can produce using any text editor.
 
 Basic HTML can include directives for formatting in a language

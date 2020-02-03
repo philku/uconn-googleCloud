@@ -13,8 +13,9 @@ also help easily change the look and feel of the site.
 Chapter 2: WordPress
 
 You will be deploying WordPress on the App Engine through the Google
-Cloud Shell. Your instuctor may elect to have you follow the instructions
-in this document or the following Code Lab: [CodeLab: Running WordPress on App Engine Flexible Environment](https://codelabs.developers.google.com/codelabs/cloud-wordpress-on-flex/index.html?index=..%2F..index#3)
+Cloud Shell. Your instructor may elect to have you follow the instructions
+in this document or the Google Code Lab: [CodeLab: Running WordPress on App Engine Flexible Environment](https://codelabs.developers.google.com/codelabs/cloud-wordpress-on-flex/index.html?index=..%2F..index#3)
+
 
 ### 2.1: What is WordPress?
 
@@ -24,7 +25,6 @@ In this lesson we will cover:
 * Turning on a VM to run WordPress
 * Deploying WordPress
 * Turning everything off
-
 
 
 Simple WordPress Setup:
@@ -37,7 +37,8 @@ Simple WordPress Setup:
 3. database sends back a result (for example, the content of the page)
 4. WordPress server sends back a web page.
 
-Cloud services for more complicated hosting problems like content distribution:
+Cloud services can augment WordPress to distribute content such as images
+faster:
 <p align="center">
     <img src="https://dpzbhybb2pdcj.cloudfront.net/geewax2/Figures/02fig02_alt.jpg">
 </p>
@@ -46,18 +47,19 @@ Cloud services for more complicated hosting problems like content distribution:
 than requesting it from the WordPress server, the browser requests it
 from Google Cloud Storage
 2. requests for images and other static content will be handled directly by Google Cloud Storage
-distributing your content around the world and caching the data close to your readers. Static content will be delivered quickly
+distributing your content around the world and caching the data close
+to your readers. Static content will be delivered quickly.
 
 <hr>
 
 ### 2.2 Digging into the database
 The most popular open source database is MySQL. In the early days
 of cloud computing, the standard way to turn on a database like MySQL
-was to create a virtual machine, install the MySQL binary package,
+was to create a virtual machine, install MySQL,
 and manage that virtual machine like any regular server.
 
 Cloud providers noticed that databases all seemed to follow this
-same pattern and started offering managed database services,
+same pattern and started offering managed database services -
 where you don’t have to configure the virtual machine yourself
 but instead turn on a managed virtual machine running a specific binary.
 
@@ -110,12 +112,14 @@ the name has to be unique inside your project.
     <img src="https://1.bp.blogspot.com/-_RXTZYMFaqY/XjY-LgGn2MI/AAAAAAAAL5I/or2adrkpYmg9CbE6t8-OCz0kX5kYCttuACLcBGAsYHQ/s640/w2.JPG">
 </p>
 
-8. Once you hit edit the you need to go into connectivity, in the overview page
+8. Once you hit edit the you'll need to navigate into connectivity, in
+the overview page
 <p align="center">
     <img src="https://1.bp.blogspot.com/-bg20U8jDoEY/XjY-1h21FgI/AAAAAAAAL5Q/-KPMxTzmTaYYMKzg-Uz09o9HCu3ZnhDZgCLcBGAsYHQ/s640/w3.JPG">
 </p>
 
 <hr>
+
 ### 2.2.2. Securing your Cloud SQL instance
 
 9. Add a new network - Open the Authorization tab,
@@ -124,9 +128,11 @@ click the Add network button, add “the world” in CIDR notation
 <p align="center">
     <img src="https://1.bp.blogspot.com/-bg20U8jDoEY/XjY-1h21FgI/AAAAAAAAL5Q/-KPMxTzmTaYYMKzg-Uz09o9HCu3ZnhDZgCLcBGAsYHQ/s640/w3.JPG">
 </p>
-Note: You should never leave this setting for your production environments.
+Note: You should never leave this setting for your production
+environments.
 
 <hr>
+
 ### 2.2.3. Connecting to your Cloud SQL instance
 
 10. From Instance Details on overview tab click: Connect using Cloud Shell
@@ -134,6 +140,8 @@ Note: You should never leave this setting for your production environments.
     <img src="https://1.bp.blogspot.com/-R4rIn7gZ5KU/XXXEeOPkytI/AAAAAAAALRg/iyIi_84rMP0DPhwECayTXPs6KbQ9yKYmwCLcBGAs/s640/a1.JPG">
 </p>
 
+
+It will type out a connection string where you just have to hit return:
 ```
 Welcome to Cloud Shell! Type "help" to get started.
 Your Cloud Platform project in this session is set to uconn-engr.
@@ -142,8 +150,11 @@ john_iacovacci1@cloudshell:~ (uconn-engr)
 $ gcloud sql connect wordpress-db --user=root --quiet
 ```
 
-It will type out a connection string where you just have to hit return
-
+After connecting, a prompt will appear for a password.
+Enter your password, once the password is accepted you are now ready to work in MySQL.
+Note: When typing the password, no stars or characters will not display,
+but if you are in the cloud shell, you are still typing the password
+even if it may seem like you're not.
 ```
 Whitelisting your IP for incoming connection for 5
 minutes...done.
@@ -151,15 +162,8 @@ Connecting to database with SQL user [root].
 Enter password:
 ```
 
-Enter your password, once the password is accepted you are now ready to work in MySQL.
-Note: When typing the password, no stars or characters will display, but you are still typing the password in.
-
+You are connected once the following appears:
 ```SQL
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MySQL connection id is 95
-Server version: 5.7.14-google-log (Google)
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MySQL [(none)]>
 ```
 

@@ -1,4 +1,6 @@
 
+<b>Text export for future formatting anf corrections, do not use</b>
+
 https://googleclouduconn.blogspot.com/p/chapter-1.html
 
 Chapter 1 What is “Cloud”?
