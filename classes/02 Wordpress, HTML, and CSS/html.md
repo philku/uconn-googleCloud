@@ -199,6 +199,7 @@ an action attribute is needed to tell the form where its
 contents will be sent to.
 
 The <b>method</b> attribute tells the form how the data in will be sent
+
 Method|Description
 ------|------
 <b>get</b>|latches the form information onto the url as a query
