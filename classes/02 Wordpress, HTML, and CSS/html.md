@@ -70,7 +70,7 @@ While not actually an HTML element itself, every HTML document should
 being with a DOCTYPE declaration to be compliant with HTML standard
 
 
-## [Headings](https://s3.amazonaws.com/uconnweb/headings.html)
+### [Headings](https://s3.amazonaws.com/uconnweb/headings.html)
 
 Heading tags H1 to H6 scale down in size
 ```HTML
@@ -94,24 +94,40 @@ Heading tags H1 to H6 scale down in size
 
 
 ### some other simple tags
-```HTML
+
+`<pre>` Creates preformatted text `</pre>`
+
 <pre> Creates preformatted text </pre>
+
+`<em>`Creates address section, usually processed in italics`</em>`
+
 <em>Creates address section, usually processed in italics</em>
+
+`<strong>` Emphasizes a word (usually processed in italics) `</strong>`
+
 <strong> Emphasizes a word (usually processed in italics) </strong>
+
+`<p>` Creates a new paragraph`</p>`
+
 <p> Creates a new paragraph</p>
-<br>Inserts a line break (carriage return)<br>
+
+`<blockquote>` Puts content in a quote - indents text from both sides`</blockquote>`
+
 <blockquote> Puts content in a quote - indents text from both sides</blockquote>
-<div>Used to format block content with CSS </div>
-```
-<pre> Creates preformatted text </pre>
-<em>Creates address section, usually processed in italics</em>
-<strong> Emphasizes a word (usually processed in italics) </strong>
-<p> Creates a new paragraph</p>
-<br>Inserts a line break (carriage return)<br>
-<blockquote> Puts content in a quote - indents text from both sides</blockquote>
+
+`<div>`Used to format block content with CSS `</div>`
+
 <div>Used to format block content with CSS </div>
 
-## Lists
+`<hr>` - Inserts a horizontal rule
+
+<hr>
+
+`<br>` - Inserts a line break (carriage return)
+
+<br>
+
+### Lists
 `<ul></ul>` - Unordered List
 `<ol></ol>` - Ordered List
 `<li></li>` - Encompasses each list item
@@ -142,11 +158,8 @@ Ordered list (start=xx, where xx is a counting number)
 </ol>
 
 
-## Other
-`<hr>` - Inserts a horizontal rule
 
-
-## Tags
+### Links
 Now lets look at links
 
 We can link to url's anywhere in the internet: `<a href="https://www.awseducate.com/">clickable text goes to url awseducate.com</a>`
@@ -182,9 +195,7 @@ Adds image; it is a separate file located at the URL
 
 Next let's embed images into our web pages
 
-## Links
-
- interactive
+### Forms
 
 Forms are used to collect data inputted by a user. An interface for a web application to send data across the web.
 
@@ -207,16 +218,17 @@ action is a program or a gateway
 input tag allows for data to get into the form
 
 
-HTML|Description
-----------------------|-----------------------------------
-`<input type="text">` | is a standard textbox. This can also have a value attribute, setting initial text in the textbox.
-`<input type="password">` | The characters typed in by the user will be hidden.
-`<input type="checkbox">` | is a checkbox, which can be toggled on and off by the user. This can also have a checked attribute
-`<input type="checkbox" checked>` | the attribute doesn’t  makes the initial state of the check box to be switched on, as it were.
-`<input type="radio">` | is similar to a checkbox, but the user can only select one radio button in a group. This can also have a checked attribute.
-`<input type="submit">` | is a button that will submit the form.
+<input type="_______">|Description|Example
+----------------------|-----------|---------------------
+`text` | is a standard textbox. This can also have a value attribute, setting initial text in the textbox.|<input type="text">
+`password` | The characters typed in by the user will be hidden.|<input type="password">
+`checkbox` | is a checkbox, which can be toggled on and off by the user. This can also have a checked attribute|<input type="checkbox">
+`checkbox` | the attribute doesn’t  makes the initial state of the check box to be switched on, as it were.|<input type="checkbox" checked>
+`radio` | is similar to a checkbox, but the user can only select one radio button in a group. This can also have a checked attribute.|<input type="radio">
+`submit` | is a button that will submit the form.|<input type="submit">
 
 You can control the text that appears on the submit button with the value attribute, for example `<input type="submit" value="Click Me Now">`.
+<input type="submit" value="Click Me Now">
 
 ### Textarea
 textarea is, basically, a large, multi-line textbox. The
@@ -260,16 +272,28 @@ for example `<input type="text" name="talkingsponge">`.
     <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
 
     <p>Are you:</p>
-    <p><input type="radio" name="areyou" value="male"> Male</p>
-    <p><input type="radio" name="areyou" value="female"> Female</p>
-    <p><input type="radio" name="areyou" value="hermaphrodite"> An hermaphrodite</p>
-    <p><input type="radio" name="areyou" value="asexual"> Asexual</p>
+    <p><input type="radio" name="areyou" value="male">Male</p>
+    <p><input type="radio" name="areyou" value="female">Female</p>
+    <p><input type="radio" name="areyou" value="other">Other</p>
 
     <p><input type="submit"></p>
 
 </form>
 ```
 
+<form action="" method="post">
+    <p>Name:</p>
+    <p><input type="text" name="name" value="Your name"></p>
+    <p>Species:</p>
+    <p><input name="species"></p>
+    <p>Comments: </p>
+    <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
+    <p>Are you:</p>
+    <p><input type="radio" name="areyou" value="male">Male</p>
+    <p><input type="radio" name="areyou" value="female">Female</p>
+    <p><input type="radio" name="areyou" value="other">Other</p>
+    <p><input type="submit"></p>
+</form>
 
 
 
