@@ -87,46 +87,47 @@ Heading tags H1 to H6 scale down in size
 
 ## some other simple tags
 
-### `<pre>` Creates preformatted text `</pre>`
+#### `<pre>` Creates preformatted text `</pre>`
 
 <pre> Creates preformatted text </pre>
 
-### `<em>`Creates address section, usually processed in italics`</em>`
+#### `<em>`Creates address section, usually processed in italics`</em>`
 
 <em>Creates address section, usually processed in italics</em>
 
-### `<strong>` Emphasizes a word (usually processed in italics) `</strong>`
+#### `<strong>` Emphasizes a word (usually processed in italics) `</strong>`
 
 <strong> Emphasizes a word (usually processed in italics) </strong>
 
-### `<p>` Creates a new paragraph`</p>`
+#### `<p>` Creates a new paragraph`</p>`
 
 <p> Creates a new paragraph</p>
 
-### `<blockquote>` Puts content in a quote - indents text from both sides`</blockquote>`
+#### `<blockquote>` Puts content in a quote - indents text from both sides`</blockquote>`
 
 <blockquote> Puts content in a quote - indents text from both sides</blockquote>
 
-### `<div>`Used to format block content with CSS `</div>`
+#### `<div>`Used to format block content with CSS `</div>`
 
 <div>Used to format block content with CSS </div>
 
-### `<hr>` - Inserts a horizontal rule
+#### `<hr>` - Inserts a horizontal rule
 
 <hr>
 
-### `<br>` - Inserts a line break (carriage return)
+#### `<br>` - Inserts a line break (carriage return)
 
 <br>
 
 ## Lists
-
+Tag|
 -----|-----
 `<ul></ul>`|Unordered List
 `<ol></ol>`|Ordered List
 `<li></li>`|Encompasses each list item
 
 ###Unordered List
+
 ```HTML
 <ul>
     <li>Encompasses each list item </li>
@@ -140,6 +141,7 @@ Heading tags H1 to H6 scale down in size
 
 
 ###Ordered list
+
 ```HTML
 <ol>
     <li>first</li>
