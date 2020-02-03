@@ -218,14 +218,14 @@ This example will send the form information as a post to processingscript.php
 
 ### Inputs
 
-`<input type="_______">`|Description|Example
-----------------------|-----------|---------------------
-`text` | is a standard textbox. This can also have a value attribute, setting initial text in the textbox.|<input type="text">
-`password` | The characters typed in by the user will be hidden.|<input type="password">
-`checkbox` | is a checkbox, which can be toggled on and off by the user. This can also have a checked attribute|<input type="checkbox">
-`checkbox` | the attribute doesn’t  makes the initial state of the check box to be switched on, as it were.|<input type="checkbox" checked>
-`radio` | is similar to a checkbox, but the user can only select one radio button in a group. This can also have a checked attribute.|<input type="radio">
-`submit` | is a button that will submit the form.|<input type="submit">
+`<input type="_______">`|Description
+----------------------|-----------
+`text` | is a standard textbox. This can also have a value attribute, setting initial text in the textbox.
+`password` | The characters typed in by the user will be hidden.
+`checkbox` | is a checkbox, which can be toggled on and off by the user. This can also have a checked attribute
+`checkbox` | the attribute doesn’t  makes the initial state of the check box to be switched on, as it were.
+`radio` | is similar to a checkbox, but the user can only select one radio button in a group. This can also have a checked attribute.
+`submit` | is a button that will submit the form.
 
 You can control the text that appears on the submit button with the value attribute, for example:
 ```HTML
