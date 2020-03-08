@@ -1,13 +1,10 @@
+# Assignment 1 - WordPress Site
 
-Assignment Number 1 Due 2/17/20
+1. Read chapters 1 and 2
+2. Come up with a business/social/any concept.
+3. Create a wordpress website with 4 pages of content for that concept.
+4. Screenshot each page including url and send it to your professor.
+Snip or photo
 
-Read chapters 1 and 2
 
-Come up with a business/social/any concept.
-
-Create a wordpress website with 4 pages of content for that concept.
-
-Screenshot each page including url and send it to me. Snip or photo
-
-Late assignments will be penalized
-
+## Reference Material

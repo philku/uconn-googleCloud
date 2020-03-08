@@ -466,8 +466,6 @@ You should also ensure that all the following variables are accurate:
 
 
 
-// TODO: Double check the following two steps for issues.
-
 <hr>
 25. Move the wordpress files so Apache can serve them
 
@@ -475,7 +473,7 @@ From the wordpress directory, run the following command:
 
 Input:
 ```
-sudo rcp -r * /var/www/html
+sudo cp -r * /var/www/html
 ```
 
 Note for troubleshooting: Now that the files are in a different location you will be required
@@ -489,8 +487,6 @@ Input:
 ```
 sudo rm /var/www/html/index.html
 ```
-
-
 
 
 <hr>
@@ -509,8 +505,8 @@ Configure WP with email account and password
 <hr>
 29. Add pages
 
-To add pages, select <b>New > Page</b> from the top of your screed or,
-from the left-hand menu, select <b>Pages > New</b>
+To add pages, select <b>New \> Page</b> from the top of your screed or,
+from the left-hand menu, select <b>Pages \> New</b>
 <p align="center">
     <img src="https://1.bp.blogspot.com/-Zh7PiE9sC_U/XjZU9V7WNtI/AAAAAAAAL6w/cdhfLNGpX4oTjh9gmxOu4rSDswAH1-ZNwCLcBGAsYHQ/s320/w11.JPG">
 </p>

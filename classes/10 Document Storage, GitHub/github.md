@@ -10,9 +10,11 @@ Git is a powerful system with many capabilities. We will only focus on
 the commands and features most people need to know. To explore all of Git,
 click on the title of this section.
 
+<br>
 <div align="center">
     <img src="http://imgs.xkcd.com/comics/git.png">
 </div>
+<br>
 
 In this course we will be using Git in the context of GitHub, the most
 popular hosting platform and community for software development using
@@ -71,5 +73,7 @@ be notified, and have the opportunity to put your code into the master branch.
 # Lab
 The first thing you'll need to get started is a GitHub account. If you
 do not have one, you should register at this time:
+
+...
 
 # Resources
