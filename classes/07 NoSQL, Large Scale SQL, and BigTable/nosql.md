@@ -43,29 +43,39 @@ Click "Add Repository" on the top right of the page.
 ![Add Repository](https://github.com/philku/uconn-googleCloud/img/class_07_02.png)
 
 ### 4
-Select create new repository
+Select create new repository then continue.
 
 ![New Repository](https://github.com/philku/uconn-googleCloud/img/class_07_03.png)
 
 ### 5
-Name your repository "default" and add your project ID to the project field.
+Name your repository "default" and add your current project ID to the project field. Then select Continue.
 
 ![New Repository](https://github.com/philku/uconn-googleCloud/img/class_07_04.png)
 
 ### 6
-Exit out of the repository tab.
+Exit out of the repository tab once the repository is created.
 
 ### 7
 Navigate to "Firestore" in the left menu of Google Cloud Console.
 
+![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_05.png)
+
 ### 8
 Select "Native Mode"
 
+![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_06.png)
+
+
 ### 9
-Open the Google Cloud Shell
+Select nam5 (United States) for storage of your data. Then click "Create Database".
+
+![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_07.png)
+
+### 9
+Once your database has been created, open the Google Cloud Shell.
 
 ### 10
-Make a new directory by entering the following command.
+Make a new directory by entering the following command:
 
 Input:
 ```
@@ -73,7 +83,7 @@ mkdir bookshelf
 ```
 
 ### 11
-Navigate into the new directory by entering the following command
+Navigate into the new directory by entering the following command:
 
 Input:
 ```
@@ -81,9 +91,7 @@ cd bookshelf
 ```
 
 ### 12
-Each Google Cloud Platform project comes with a single Cloud Source Repository called ‘default', which is currently empty. Type the following command to clone your default repository.
-
-The first time this is run, you may need to enable the api in the command line. To do this if asked, simply press "y" then enter.
+In order to pull code using Git, you'll need to initialize a repository.
 
 Input:
 ```
@@ -119,13 +127,14 @@ git push origin master
 
 
 ### 16
-You use the pip command to install Python packages listed as requirements. The pip utility is already installed in Cloud Shell. Type the following command to install the packages and dependencies required for this lab into the lib directory.
+You use the pip command to install Python packages listed as requirements. The pip utility is already installed in Cloud Shell. Type the following command to install the packages and dependencies required for this lab.
 
 Input:
 ```
 pip3 install -r requirements.txt
 ```
 
+You may have some errors. This should be okay.
 
 ### 17
 You are now ready to deploy the Bookshelf application to App Engine. You use the gcloud command-line utility that is already installed in Cloud Shell to manage your App Engine application. Type the following command to deploy the application.
@@ -135,36 +144,33 @@ Input:
 gcloud app deploy
 ```
 
-The system asks you into which GCP region you want to deploy your application.
-
-Enter a choice, using its number in the list presented, that is geographically close to you.
-
 You are asked to confirm that you want to proceed with the deployment:
 
 ```Do you want to continue (Y/n)?```
 
-Type Y and press return.
+Type Y and press return/enter.
 
-The output displays the progress of the deployment.
-
-The deployment has successfully completed once you see the following message.
+The deployment has successfully completed once you see the following message:
 
 ```Deployed service [default] to [https://<project-id>.appspot.com]```
 
 
 ### 18
-Visit your site by entering the following command
+Visit your site by entering the following command:
 
 Input:
 ```
 gcloud app browse
 ```
 
+It should either use your default browser, or provide you with a clickable link to the site.
 
 ### 19
-Navigate to the webpage, add a book utilizing the "add field" button to add a field for "Pages".
+Navigate to the webpage > click "+ Add book", then add a book utilizing the "add field" button to add a field for "Pages" with a value of your choosing.
 
-Here you can see that since we are using a NoSQL Database, we can add fields to the book that have not already been defined in the schema.
+Test adding more books with different additional fields.
+
+SInce we are using a NoSQL database, we can add fields that are not defined in schema.
 
 ### 20
-Navigate to Firestore in the Google Cloud Console. Take a look at your data.
+Navigate to Firestore in the Google Cloud Console. Take a look at your data. Here you can see a new field is added for your unique form entries.
