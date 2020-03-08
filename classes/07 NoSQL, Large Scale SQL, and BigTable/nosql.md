@@ -58,18 +58,18 @@ Exit out of the repository tab once the repository is created.
 ### 7
 Navigate to "Firestore" in the left menu of Google Cloud Console.
 
-![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_05.png)
+![Firestore Menu Item](https://raw.githubusercontent.com/philku/uconn-googleCloud/img/class_07_05.png)
 
 ### 8
 Select "Native Mode"
 
-![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_06.png)
+![Firestore Menu Item](https://raw.githubusercontent.com/philku/uconn-googleCloud/img/class_07_06.png)
 
 
 ### 9
 Select nam5 (United States) for storage of your data. Then click "Create Database".
 
-![Firestore Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_07.png)
+![Firestore Menu Item](https://raw.githubusercontent.com/philku/uconn-googleCloud/img/class_07_07.png)
 
 ### 9
 Once your database has been created, open the Google Cloud Shell.
@@ -166,7 +166,7 @@ gcloud app browse
 It should either use your default browser, or provide you with a clickable link to the site.
 
 ### 19
-Navigate to the webpage > click "+ Add book", then add a book utilizing the "add field" button to add a field for "Pages" with a value of your choosing.
+Navigate to the webpage > click "+ Add book" > then add a book utilizing the "add field" button to add a field for "Pages" with a value of your choosing.
 
 Test adding more books with different additional fields.
 
