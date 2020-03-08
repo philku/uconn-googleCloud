@@ -35,22 +35,22 @@ Navigate to Google Cloud Console, and start a new project if needed.
 ### 2
 Navigate to "Source Repositories" in the left menu.
 
-![Source Repositories Menu Item](https://github.com/philku/uconn-googleCloud/img/class_07_01.png)
+![Source Repositories Menu Item](https://raw.githubusercontent.com/philku/uconn-googleCloud/master/img/class_07_01.png)
 
 ### 3
 Click "Add Repository" on the top right of the page.
 
-![Add Repository](https://github.com/philku/uconn-googleCloud/img/class_07_02.png)
+![Add Repository](https://raw.githubusercontent.com/philku/uconn-googleCloud/master/img/class_07_02.png)
 
 ### 4
 Select create new repository
 
-![New Repository](https://github.com/philku/uconn-googleCloud/img/class_07_03.png)
+![New Repository](https://raw.githubusercontent.com/philku/uconn-googleCloud/master/img/class_07_03.png)
 
 ### 5
 Name your repository "default" and add your project ID to the project field.
 
-![New Repository](https://github.com/philku/uconn-googleCloud/img/class_07_04.png)
+![New Repository](https://raw.githubusercontent.com/philku/uconn-googleCloud/master/img/class_07_04.png)
 
 ### 6
 Exit out of the repository tab.
